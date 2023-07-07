@@ -45,22 +45,4 @@ else's configuration. To create it, you can run
 
 The file will be located in the root folder and named :code:`local.yaml`. Fill in any value here.
 To access configuration programmatically, use the :code:`get_config()` from the module
-:code:`rms.config`.
-
-Using configuration for testing
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-For testing, you likely want / should use different values for e.g. database connections.
-The folder :code:`test/test_rms/resources` includes a file to store values specific for testing (:code:`local.testing.yaml`).
-To make sure the :code:`get_config` function reads the YAML file for testing, we use
-an environment variable called :code:`XCONFIG_LOCAL_YAML`. We are using a fixture
-to set this before any test runs
-
-.. code-block:: python
-
-    @pytest.fixture(autouse=True)  # runs for any test
-    def setup_config():
-        os.environ["XCONFIG_LOCAL_YAML"] = os.path.join(P_RESOURCES, "local.test.yaml")
-
-
-
+:code:`boilerplate.config`.
