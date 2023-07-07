@@ -1,0 +1,14 @@
+source: development-config
+
+blob_storage_login:
+    account_name:
+    account_key:
+
+sql_login:
+    username:
+    password:
+
+sql_connection:
+    driver_path:
+    server:
+    port:

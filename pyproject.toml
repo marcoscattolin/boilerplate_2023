@@ -1,0 +1,85 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[tool.flit.sdist]
+exclude = [".idea", "tmp", "dist", ".tox", ".pytest_cache", "notebooks"]
+
+[project]
+name = "boilerplate"
+dynamic = ["version"]
+authors = [{name = "Marco Scattolin"}]
+readme = "README.md"
+description = "boilerplate"
+requires-python = ">=3.9"
+dependencies = [
+    "numpy==1.24.3",
+    "pandas==2.0.1",
+    "pydantic[dotenv]>=1.10.7",
+    "pyodbc==4.0.39",
+    "python-dateutil==2.8.2",
+    "pytz==2023.3",
+    "PyYAML==6.0",
+    "six==1.16.0",
+    "SQLAlchemy==1.4.48",
+    "typing_extensions==4.5.0",
+    "tzdata==2023.3",
+    "furo==2023.5.20",
+    "apache-airflow==2.6.1",
+    "apache-airflow-providers-telegram==4.1.0",
+    "streamlit>=1.23.1",
+    "cowsay==5.0",
+    "scikit-learn==1.2.2",
+    "statsmodels==0.14.0",
+    "ortools==9.6.2534",
+    "azure-core==1.27.1",
+    "azure-storage-blob==12.16.0"
+]
+
+[project.optional-dependencies]
+testing = [
+    "pytest == 7.1.2",
+    "pytest-cov == 3.0.0",
+    "pytest-lazy-fixture >= 0.6.3",
+    "flake8>=3.9.*",
+    "black==22.6.0",
+    "pre-commit == 2.20.0",
+    "isort == 5.9.3",
+    "sql-formatter >= 0.6",
+    "tox == 3.25.1",
+]
+
+docs = [
+    "Sphinx==7.0.1",
+    "sphinx-toolbox>=0.3.4",
+    "sphinx-copybutton>=0.5.2",
+]
+
+local_development = [
+    "jupyterlab >= 3.5.3",
+    "jupyter >= 1.0.0"
+]
+
+[tool.black]
+# quiet = "True"
+line-length = 88
+target_version = ['py39']
+include = '\.pyi?$'
+exclude = '''
+(
+  /(
+      \.eggs
+    | \.git
+    | \.mypy_cache
+    | \.tox
+    | \.venv
+    | data
+    | sphinx
+    | dist
+    | docs
+    | notebooks
+    | sphinx
+    | venv
+  )/
+)
+'''
