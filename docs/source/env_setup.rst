@@ -3,18 +3,19 @@ Environment setup
 
 .. _dev setup:
 
-Development Setup
------------------
+Initial Setup via Pycharm
+--------------------------
 
-To install the requirements and package, fist setup a Virtual Environment using Python.
-The :code:`flit` command will install all extra dependencies to run test and pre-commit hooks.
-In a production scenario, you can omit the extra dependencies.
+Create new project cloning the repository. Add new local interpreter specifying :code:`.venv` as directory
+for the environment. Mark directory :code:`src` as Soruces root
+
+Packages and pre-commit installation
+---------------------------------------------
+
+To install the requirements and package the :code:`flit` command will install all extra dependencies to run test
+and pre-commit hooks. In a production scenario, you can omit the extra dependencies.
 
 .. code-block:: bash
-
-    $ python -m venv .venv
-
-    $ source .venv/bin/activate
 
     $ pip install --upgrade pip flit wheel setuptools
 
@@ -28,9 +29,12 @@ Next, install the pre-commit hooks using
 
 You can verify the installation by running the test suite
 
+[Optional] Spark support
+------------------------
 
-Database support
-----------------
+
+[Optional] Database support
+---------------------------
 
 Boilerplate provides Postgres database support via docker. In order to provision the database go
 to folder :code:`docker` and run
@@ -38,8 +42,6 @@ to folder :code:`docker` and run
 .. code-block:: bash
 
     $ docker compose up
-
-
 
 
 Configuration Management
