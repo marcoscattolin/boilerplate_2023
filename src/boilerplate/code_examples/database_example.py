@@ -24,7 +24,7 @@ conn_string = (
 engine = create_engine(conn_string)
 
 # write to database
-df.to_sql("POSTGRES_TABLE", con=engine, if_exists="replace")
+df.to_sql("POSTGRES_TABLE", con=engine, if_exists="replace", index=False)
 logger.info(f"Saved {df.shape[0]} rows.")
 
 
