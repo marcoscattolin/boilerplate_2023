@@ -9,6 +9,11 @@ Initial Setup via Pycharm
 Create a new project cloning the repository. Add new local interpreter specifying :code:`.venv` as directory
 for the environment. Mark directory :code:`src` as Sources Root.
 
+Remove references to boilerplate
+--------------------------------
+In pycharm hit ctrl+shift+F and search for 'boilerplate'. Replace all occurrences with your project name.
+
+
 Packages and pre-commit installation
 ---------------------------------------------
 
