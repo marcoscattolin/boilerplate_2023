@@ -18,8 +18,8 @@ df["COLUMN_C"] = pd.to_datetime(df["COLUMN_C"])
 
 # establish connections
 conn_string = (
-    f"postgresql://{conf.sql_login.username}:{conf.sql_login.password.get_secret_value()}@"
-    f"{conf.sql_connection.server}/{conf.sql_connection.db_name}"
+    f"postgresql://{conf.sql_login.username}:{conf.sql_login.password.get_secret_value()}"
+    f"@{conf.sql_connection.server}/{conf.sql_connection.db_name}"
 )
 engine = create_engine(conn_string)
 
