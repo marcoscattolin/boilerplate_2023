@@ -3,11 +3,8 @@
 # ============================================================
 __copyright__ = "Copyright (C) 2022, Boston Consulting Group"
 __license__ = "Proprietary"
-__author__ = (
-    "Marco Scattolin <scattolin.marco@bcg.com>",
-)
+__author__ = ("Marco Scattolin <scattolin.marco@bcg.com>",)
 # ============================================================
-
 import os
 import pathlib
 import shutil
@@ -47,6 +44,7 @@ def init():
         "Initialized Config 🥳. You can find a template of the config file in "
         f"`{output_path}` in the project root dir."
     )
+
 
 cli.add_command(init)
 # noinspection PyTypeChecker

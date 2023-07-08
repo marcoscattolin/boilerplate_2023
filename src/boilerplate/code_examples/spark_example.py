@@ -4,14 +4,11 @@
 __copyright__ = "Copyright (C) 2022, Boston Consulting Group"
 __license__ = "Proprietary"
 __author__ = ("Marco Scattolin <scattolin.marco@bcg.com>",)
-
-
+# ============================================================
 import pyspark.sql.functions as func
 
 from boilerplate.config import conf
 from boilerplate.utils.logging import logger
-
-# ============================================================
 from boilerplate.utils.spark import spark
 
 # read from file

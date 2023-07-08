@@ -3,20 +3,17 @@
 # ============================================================
 __copyright__ = "Copyright (C) 2022, Boston Consulting Group"
 __license__ = "Proprietary"
-__author__ = (
-    "Marco Scattolin <scattolin.marco@bcg.com>",
-)
+__author__ = ("Marco Scattolin <scattolin.marco@bcg.com>",)
 # ============================================================
 import logging
 import os
 import pathlib
-from datetime import date
-from typing import List, Optional, Union
+from typing import Optional, Union
 
 import yaml
 from airflow.models import Variable
 from airflow.utils.helpers import merge_dicts
-from pydantic import BaseModel, Field, PositiveInt, SecretStr
+from pydantic import BaseModel, SecretStr
 
 from ._xconfig import BaseConfigProvider, XConfig
 
@@ -51,7 +48,6 @@ class SqlConnection(BaseModel):
     server: str
     port: int
     db_name: str
-
 
 
 class Config(XConfig):
