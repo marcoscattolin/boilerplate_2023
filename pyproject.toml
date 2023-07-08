@@ -48,10 +48,10 @@ dependencies = [
     "xlrd==2.0.1",
     "neuralforecast==1.5.0",
     "mlforecast==0.7.4",
-    #"pandas-profiling==3.6.6",
-    #"pycaret==3.0.4",
-    #"statsforecast==1.5.0",
-    #"hierarchicalforecast==0.3.0",
+    "statsforecast==1.5.0",
+    #"hierarchicalforecast==0.3.0",     # not compatible with above
+    #"ydata-profiling==4.3.1",          # not compatible with above
+    #"pycaret==3.0.4",                  # not compatible with above
 ]
 
 [project.optional-dependencies]
