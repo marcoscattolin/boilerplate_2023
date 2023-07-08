@@ -12,4 +12,5 @@ Welcome to Boilerplate's documentation!
    :hidden:
 
    env_setup
+   folder_tree_structure
    documentation

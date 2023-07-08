@@ -3,14 +3,13 @@
 # ============================================================
 __copyright__ = "Copyright (C) 2022, Boston Consulting Group"
 __license__ = "Proprietary"
-__author__ = (
-    "Marco Scattolin <scattolin.marco@bcg.com>",
-)
+__author__ = ("Marco Scattolin <scattolin.marco@bcg.com>",)
 # ============================================================
 import logging
 import os
 import uuid
 from logging import handlers
+
 from boilerplate.config import base_path
 
 LOGS = "logs"
@@ -47,10 +46,7 @@ def get_logger(conf: PathConfig, log_level=logging.WARNING) -> logging.Logger:
     log_format = "%(asctime)s, [%(name)s] [%(levelname)s] : %(message)s"
 
     # init logger
-    # logging.basicConfig(format=log_format, filename=logfile, encoding="utf-8", level=logging.INFO)
-    logger = logging.getLogger(
-        str(conf.run_id)
-    )  # logging.getLogger("_empty_") for no id
+    logger = logging.getLogger(str(conf.run_id))
     logger.setLevel(log_level)
 
     # Add rotating logfile handler (max 5 backups, 1 megabyte each)

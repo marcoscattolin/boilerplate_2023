@@ -6,6 +6,8 @@ local.yaml
 # data files
 *.csv
 *.xlsx
+*.xls
+*.parquet
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
