@@ -38,6 +38,7 @@ dependencies = [
     "notebook==6.5.4",
     "jupyter-contrib-nbextensions==0.7.0",
     "autopep8==2.0.2",
+    "psycopg2==2.9.6",
 ]
 
 [project.optional-dependencies]
