@@ -37,6 +37,8 @@ dependencies = [
     "pyspark==3.4.1",
     "notebook==6.5.4",
     "jupyter-contrib-nbextensions==0.7.0",
+    "sparksql-magic==0.0.3",
+    "autopep8==2.0.2",
 ]
 
 [project.optional-dependencies]
