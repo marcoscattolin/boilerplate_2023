@@ -50,6 +50,8 @@ class SqlConnection(BaseModel):
     driver_path: str
     server: str
     port: int
+    db_name: str
+
 
 
 class Config(XConfig):

@@ -12,7 +12,7 @@ In a production scenario, you can omit the extra dependencies.
 
 .. code-block:: bash
 
-    $ python3.8 -m venv .venv
+    $ python -m venv .venv
 
     $ source .venv/bin/activate
 
@@ -27,6 +27,19 @@ Next, install the pre-commit hooks using
     $ pre-commit install --install-hooks
 
 You can verify the installation by running the test suite
+
+
+Database support
+----------------
+
+Boilerplate provides Postgres database support via docker. In order to provision the database go
+to folder :code:`docker` and run
+
+.. code-block:: bash
+
+    $ docker compose up
+
+
 
 
 Configuration Management
