@@ -36,3 +36,16 @@ db_url = f"jdbc:postgresql://{conf.sql_connection.server}:{conf.sql_connection.p
 )
 
 logger.info(f"Saved {df.count()} rows.")
+
+
+# read from database
+loaded_df = (
+    spark.read.format("jdbc")
+    .option("url", db_url)
+    .option("driver", "org.postgresql.Driver")
+    .option("dbtable", "POSTGRES_TABLE")
+    .option("user", conf.sql_login.username)
+    .option("password", conf.sql_login.password.get_secret_value())
+    .load()
+)
+logger.info(f"Loaded {loaded_df.count()} rows.")
