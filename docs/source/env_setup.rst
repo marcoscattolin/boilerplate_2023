@@ -93,4 +93,4 @@ and save it into :code:`/opt/spark-3.4.1-bin-hadoop3/jars`
 
 If setting environment on a windows machine, download :code:`winutils.exe` for
 hadoop-3.3.5 from `https://github.com/huskyui/winutils/blob/master/hadoop-3.3.5/bin/winutils.exe <https://github.com/huskyui/winutils/blob/master/hadoop-3.3.5/bin/winutils.exe>`_
-and save it into :code:`C:\spark\hadoop-3.3.5\bin`. Then set variable HADOOP_HOME to :code:`C:\spark\hadoop-3.3.5`
+and save it into :code:`C:\\spark\\hadoop-3.3.5\\bin`. Then set variable HADOOP_HOME to :code:`C:\\spark\\hadoop-3.3.5`
