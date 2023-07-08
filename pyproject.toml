@@ -39,6 +39,19 @@ dependencies = [
     "jupyter-contrib-nbextensions==0.7.0",
     "autopep8==2.0.2",
     "psycopg2==2.9.6",
+    "plotly==5.15.0",
+    "prophet==1.1.4",
+    "seaborn==0.12.2",
+    "statsmodels==0.14.0",
+    "lightgbm==3.3.5",
+    "xgboost==1.7.6",
+    "xlrd==2.0.1",
+    "neuralforecast==1.5.0",
+    "mlforecast==0.7.4",
+    #"pandas-profiling==3.6.6",
+    #"pycaret==3.0.4",
+    #"statsforecast==1.5.0",
+    #"hierarchicalforecast==0.3.0",
 ]
 
 [project.optional-dependencies]
