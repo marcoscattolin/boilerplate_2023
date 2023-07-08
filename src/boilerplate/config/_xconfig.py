@@ -1,10 +1,7 @@
-# ============================================================
-# COPYRIGHT
-# ============================================================
-__copyright__ = "Copyright (C) 2022, Boston Consulting Group"
-__license__ = "Proprietary"
-__author__ = ("Marco Scattolin <scattolin.marco@bcg.com>",)
-# ============================================================
+#  Copyright (c) 2023, Boston Consulting Group.
+#  Authors: Marco Scattolin
+#  License: Proprietary
+
 from abc import ABC
 from typing import Any, Dict, Generic, List, Optional, Type, TypeVar, get_args
 
