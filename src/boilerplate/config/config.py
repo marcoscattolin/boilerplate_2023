@@ -15,6 +15,8 @@ from pydantic import BaseModel, SecretStr
 from ._xconfig import BaseConfigProvider, XConfig
 
 base_path = pathlib.Path(__file__).parent.parent.parent.parent
+if ".venv" in base_path.parts:
+    base_path = base_path.parent.parent
 logging.getLogger("airflow.models.variable").setLevel(logging.CRITICAL)
 
 

@@ -10,6 +10,8 @@ import click
 import cowsay
 
 base_path = pathlib.Path(__file__).parent.parent.parent
+if ".venv" in base_path.parts:
+    base_path = base_path.parent.parent
 
 
 def initialize_local_default_config() -> pathlib.Path:
