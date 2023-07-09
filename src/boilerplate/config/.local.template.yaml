@@ -5,8 +5,8 @@ blob_storage_login:
     account_key: <dummy>
 
 sql_login:
-    username: <put_username_here>
-    password: <put_password_here>
+    username: boilerplate
+    password: boilerplate
 
 sql_connection:
     driver_path: <dummy>
