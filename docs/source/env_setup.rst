@@ -11,7 +11,10 @@ for the environment. Mark directory :code:`src` as Sources Root.
 
 Remove references to boilerplate
 --------------------------------
-In pycharm hit ctrl+shift+F and search for 'boilerplate'. Replace all occurrences with your project name.
+In pycharm
+    - hit ctrl+shift+F and search for 'boilerplate', then replace all occurrences with your project name
+    - rename folder :code:`src/boilerplate` into :code:`src/<repo name>`
+    - copy file :code:`src/boilerplate/config/.local.template.yaml` into root folder and rename it to :code:`local.yaml`
 
 
 Packages and pre-commit installation
