@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 Welcome to boilerplate_2023 documentation!
-=======================================
+==========================================
 
 .. toctree::
    :maxdepth: 1
