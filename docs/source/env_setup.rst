@@ -19,6 +19,16 @@ Initial Setup via Pycharm
 Create a new project cloning the repository. Add new local interpreter specifying :code:`.venv` as directory
 for the environment. Mark directory :code:`src` as Sources Root.
 
+.. code-block:: bash
+
+    python -m venv .venv
+
+and activate it
+
+.. code-block:: bash
+
+    .venv\Scripts\activate
+
 
 Packages and pre-commit installation
 ---------------------------------------------
