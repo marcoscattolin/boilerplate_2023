@@ -3,18 +3,21 @@ Environment setup
 
 .. _dev setup:
 
+Run this steps in order
+
+Remove references to boilerplate_2023
+-------------------------------------
+In pycharm
+    - hit ctrl+shift+F and search for 'boilerplate_2023', then replace all occurrences with your repository name
+    - rename folder :code:`src/boilerplate_2023` into :code:`src/<repo name>`
+    - copy file :code:`src/boilerplate_2023/config/.local.template.yaml` into root folder and rename it to :code:`local.yaml`
+    - from :code:`docs/source/env_setup.rst` get rid of this section (i.e. Remove references to boilerplate_2023)
+
 Initial Setup via Pycharm
 --------------------------
 
 Create a new project cloning the repository. Add new local interpreter specifying :code:`.venv` as directory
 for the environment. Mark directory :code:`src` as Sources Root.
-
-Remove references to boilerplate
---------------------------------
-In pycharm
-    - hit ctrl+shift+F and search for 'boilerplate', then replace all occurrences with your project name
-    - rename folder :code:`src/boilerplate` into :code:`src/<repo name>`
-    - copy file :code:`src/boilerplate/config/.local.template.yaml` into root folder and rename it to :code:`local.yaml`
 
 
 Packages and pre-commit installation
@@ -51,16 +54,16 @@ else's configuration. To create it, you can run
 
 .. code-block::
 
-    python -m boilerplate init
+    python -m boilerplate_2023 init
 
 The file will be located in the root folder and named :code:`local.yaml`. Fill in any value here.
 To access configuration programmatically, use the :code:`get_config()` from the module
-:code:`boilerplate.config`.
+:code:`boilerplate_2023.config`.
 
 Database installation [Optional]
 --------------------------------
 
-Boilerplate provides Postgres database support via docker. In order to provision the database go
+boilerplate_2023 provides Postgres database support via docker. In order to provision the database go
 to folder :code:`docker` and run
 
 .. code-block:: bash
@@ -71,7 +74,7 @@ Datbase credentials can be defined in :code:`local.yaml` and accessed by
 
 .. code-block:: python
 
-    from boilerplate.config import conf
+    from boilerplate_2023.config import conf
 
     username = conf.sql_login.username
 

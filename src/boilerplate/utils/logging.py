@@ -7,7 +7,7 @@ import os
 import uuid
 from logging import handlers
 
-from boilerplate.config import base_path
+from boilerplate_2023.config import base_path
 
 LOGS = "logs"
 

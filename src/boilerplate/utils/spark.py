@@ -7,7 +7,7 @@ from pyspark.sql import SparkSession, SQLContext
 
 def spark_init():
     _spark = (
-        SparkSession.builder.appName("Boilerplate").master("local[*]").getOrCreate()
+        SparkSession.builder.appName("boilerplate_2023").master("local[*]").getOrCreate()
     )
 
     sc = _spark.sparkContext

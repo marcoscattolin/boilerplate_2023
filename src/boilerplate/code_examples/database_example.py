@@ -5,8 +5,8 @@
 import pandas as pd
 from sqlalchemy import create_engine
 
-from boilerplate.config.config import conf
-from boilerplate.utils.logging import logger
+from boilerplate_2023.config.config import conf
+from boilerplate_2023.utils.logging import logger
 
 # read from file
 df = pd.read_csv("../../../data/test.csv.dummy", parse_dates=True)

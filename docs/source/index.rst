@@ -1,9 +1,9 @@
-.. boilerplate documentation master file, created by
+.. boilerplate_2023 documentation master file, created by
    sphinx-quickstart on Fri Jul  7 13:59:29 2023.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Boilerplate's documentation!
+Welcome to boilerplate_2023 documentation!
 =======================================
 
 .. toctree::

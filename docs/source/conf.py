@@ -6,7 +6,7 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'Boilerplate'
+project = 'boilerplate_2023'
 copyright = '2023, Marco Scattolin'
 author = 'Marco Scattolin'
 
