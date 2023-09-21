@@ -6,7 +6,7 @@ build-backend = "flit_core.buildapi"
 exclude = [".idea", "tmp", "dist", ".tox", ".pytest_cache", "notebooks"]
 
 [project]
-name = "boilerplate"
+name = "boilerplate_2023"
 dynamic = ["version"]
 authors = [{name = "Marco Scattolin"}]
 readme = "README.md"
