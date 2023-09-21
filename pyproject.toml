@@ -10,7 +10,7 @@ name = "boilerplate"
 dynamic = ["version"]
 authors = [{name = "Marco Scattolin"}]
 readme = "README.md"
-description = "boilerplate"
+description = "boilerplate_2023"
 requires-python = ">=3.9"
 dependencies = [
     "numpy==1.24.3",
