@@ -5,11 +5,11 @@ blob_storage_login:
     account_key: <dummy>
 
 sql_login:
-    username: boilerplate_2023
-    password: boilerplate_2023
+    username: <dummy>
+    password: <dummy>
 
 sql_connection:
     driver_path: <dummy>
     server: localhost
     port: 5432
-    db_name: boilerplate_2023_db
+    db_name: <dummy>

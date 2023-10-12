@@ -5,6 +5,6 @@ services:
     ports:
       - 5432:5432
     environment:
-      POSTGRES_PASSWORD: boilerplate_2023
-      POSTGRES_USER: boilerplate_2023
-      POSTGRES_DB: boilerplate_2023_db
+      POSTGRES_USER: pg_user
+      POSTGRES_PASSWORD: pg_password
+      POSTGRES_DB: pg_database

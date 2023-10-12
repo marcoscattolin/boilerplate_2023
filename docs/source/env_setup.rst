@@ -9,8 +9,6 @@ Remove references to boilerplate_2023
 -------------------------------------
 In pycharm
     - hit ctrl+shift+F and search for 'boilerplate_2023', then replace all occurrences with your repository name
-    - rename folder :code:`src/boilerplate_2023` into :code:`src/<repo name>`
-    - copy file :code:`src/boilerplate_2023/config/.local.template.yaml` into root folder and rename it to :code:`local.yaml`
     - from :code:`docs/source/env_setup.rst` get rid of this section (i.e. Remove references to boilerplate_2023)
 
 Initial Setup via Pycharm
@@ -28,6 +26,8 @@ and activate it
 .. code-block:: bash
 
     .venv\Scripts\activate
+
+Copy file :code:`src/core/config/.local.template.yaml` into root folder and rename it to :code:`local.yaml`
 
 
 Packages and pre-commit installation
@@ -64,16 +64,16 @@ else's configuration. To create it, you can run
 
 .. code-block::
 
-    python -m boilerplate_2023 init
+    python -m core init
 
 The file will be located in the root folder and named :code:`local.yaml`. Fill in any value here.
 To access configuration programmatically, use the :code:`get_config()` from the module
-:code:`boilerplate_2023.config`.
+:code:`core.config`.
 
 Database installation [Optional]
 --------------------------------
 
-boilerplate_2023 provides Postgres database support via docker. In order to provision the database go
+Postgres database support is provided via docker. In order to provision the database go
 to folder :code:`docker` and run
 
 .. code-block:: bash
@@ -84,7 +84,7 @@ Datbase credentials can be defined in :code:`local.yaml` and accessed by
 
 .. code-block:: python
 
-    from boilerplate_2023.config import conf
+    from core.config import conf
 
     username = conf.sql_login.username
 

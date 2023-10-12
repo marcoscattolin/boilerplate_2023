@@ -4,9 +4,9 @@
 
 import pyspark.sql.functions as func
 
-from boilerplate_2023.config import conf
-from boilerplate_2023.utils.logging import logger
-from boilerplate_2023.utils.spark import spark
+from core.config import conf
+from core.utils.logging import logger
+from core.utils.spark import spark
 
 # read from file
 df = spark.read.csv("../../../data/test.csv.dummy", header=True)

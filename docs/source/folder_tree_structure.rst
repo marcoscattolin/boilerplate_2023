@@ -11,13 +11,13 @@ The folder :code:`src` is meant to host all the code that has to developed. Sub-
 
 .. tip:: Remember to mark :code:`src` as Sources Root.
 
-:code:`src/boilerplate_2023`: meant to host the code to be developed. Create sub-folders and insert code inside here.
+:code:`src/core`: meant to host the code to be developed. Create sub-folders and insert code inside here.
 
-:code:`src/boilerplate_2023/code_examples`: contains a few example of how to use spark and database support.
+:code:`src/core/code_examples`: contains a few example of how to use spark and database support.
 
-:code:`src/boilerplate_2023/config`: contains scripts used to load configuration parameters from yaml file.
+:code:`src/core/config`: contains scripts used to load configuration parameters from yaml file.
 
-:code:`src/boilerplate_2023/utils`: contains scripts used to instantiate logger and spark session.
+:code:`src/core/utils`: contains scripts used to instantiate logger and spark session.
 
 :code:`src/airflow_dags`: can be used to host airflow dags.
 
@@ -46,7 +46,7 @@ Files in Content Root
 :code:`jupyter_spark.bat`: can be used to initialize a jupyter notebook session including a spark session.
 
 :code:`local.yaml`: configuration parameters. To tweak and adjust project configuration parameters. While adding/removing parameters, remember to keep
-file :code:`src/boilerplate_2023/config/.local.template.yaml` up to date.
+file :code:`src/core/config/.local.template.yaml` up to date.
 
 :code:`pyproject.toml`: definition of dependencies
 
