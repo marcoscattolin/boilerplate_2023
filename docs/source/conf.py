@@ -6,9 +6,9 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'boilerplate_2023'
-copyright = '2023, Marco Scattolin'
-author = 'Marco Scattolin'
+project = "Project"
+copyright = "2023, Marco Scattolin"
+author = "Marco Scattolin"
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -21,9 +21,8 @@ extensions = [
     "sphinx_toolbox.collapse",
 ]
 
-templates_path = ['_templates']
+templates_path = ["_templates"]
 exclude_patterns = []
-
 
 
 # -- Options for HTML output -------------------------------------------------

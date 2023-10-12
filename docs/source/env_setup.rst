@@ -3,16 +3,11 @@ Environment setup
 
 .. _dev setup:
 
-Run this steps in order
-
-Remove references to boilerplate_2023
--------------------------------------
-In pycharm
-    - hit ctrl+shift+F and search for 'boilerplate_2023', then replace all occurrences with your repository name
-    - from :code:`docs/source/env_setup.rst` get rid of this section (i.e. Remove references to boilerplate_2023)
 
 Initial Setup via Pycharm
 --------------------------
+
+Run this steps in order
 
 Create a new project cloning the repository. Add new local interpreter specifying :code:`.venv` as directory
 for the environment. Mark directory :code:`src` as Sources Root.
