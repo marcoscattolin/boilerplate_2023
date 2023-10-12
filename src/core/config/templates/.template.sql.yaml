@@ -1,0 +1,9 @@
+sql_login:
+    username: <local_dummy>
+    password: <local_dummy>
+
+sql_connection:
+    driver_path: <local_dummy>
+    server: localhost
+    port: 5432
+    db_name: <local_dummy>

@@ -1,4 +1,4 @@
-local.yaml
+configs
 
 # log file
 *.log
