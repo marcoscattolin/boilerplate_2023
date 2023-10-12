@@ -6,11 +6,11 @@ build-backend = "flit_core.buildapi"
 exclude = [".idea", "tmp", "dist", ".tox", ".pytest_cache", "notebooks"]
 
 [project]
-name = "boilerplate_2023"
+name = "core"
 dynamic = ["version"]
 authors = [{name = "Marco Scattolin"}]
 readme = "README.md"
-description = "boilerplate_2023"
+description = "Project description"
 requires-python = ">=3.9"
 dependencies = [
     "python-dateutil==2.8.2",
