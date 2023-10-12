@@ -52,15 +52,14 @@ The repository uses a Pydantic-based approach facilitated by XConfig, a library 
 internally. When cloning your first instance of the repo, you will get a lot of defaults values
 already attached to the Pydantic models. Some values are not set (especially secrets).
 The recommended way to store the missing values is via a YAML file not versioned by git.
-In this file, you can store secrets and overwrite any values to your needs without affecting anyone
+In the yaml files, you can store secrets and overwrite any values to your needs without affecting anyone
 else's configuration. To create it, you can run
 
 .. code-block::
 
     python -m core init
 
-The file will be located in the root folder and named :code:`local.yaml`. Fill in any value here.
-To access configuration programmatically, use the :code:`get_config()` from the module
+The configuration files will be located in :code:`configs`. To access configuration programmatically, use the :code:`get_config()` from the module
 :code:`core.config`.
 
 Database installation [Optional]
