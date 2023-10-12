@@ -8,8 +8,6 @@ import pathlib
 from typing import Optional, Union
 
 import yaml
-from airflow.models import Variable
-from airflow.utils.helpers import merge_dicts
 from pydantic import BaseModel, SecretStr
 
 from ._xconfig import BaseConfigProvider, XConfig
@@ -79,7 +77,6 @@ def get_config(
 
     The function will try to read the local yaml path from different sources in this order:
     * OS environment variable (highest priority)
-    * Airflow Variable
     * default location -> base path variable + local.yaml (lowest priority)
 
     :param reload: if True, the config will be reloaded from disk even if
@@ -98,8 +95,6 @@ def get_config(
     """
     if local_yaml is None:
         local_yaml = os.environ.get("XCONFIG_LOCAL_YAML", None)
-    if local_yaml is None:
-        local_yaml = Variable.get("XCONFIG_LOCAL_YAML", None)
     if local_yaml is None and os.path.isfile(os.path.join(base_path, "local.yaml")):
         local_yaml = os.path.join(base_path, "local.yaml")
 
@@ -112,7 +107,8 @@ def get_config(
             extra_config = yaml.safe_load(stream)
         if extra_config is None:
             extra_config = dict()
-        extra_args = merge_dicts(extra_config, kwargs)
+        # merge dicts, kwargs have priority
+        extra_args = {**extra_config, **kwargs}
         return __provider.get_config(
             reload=reload, env_prefix=env_prefix, *args, **extra_args
         )
