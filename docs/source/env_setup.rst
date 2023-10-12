@@ -22,8 +22,6 @@ and activate it
 
     .venv\Scripts\activate
 
-Copy file :code:`src/core/config/.local.template.yaml` into root folder and rename it to :code:`local.yaml`
-
 
 Packages and pre-commit installation
 ---------------------------------------------
