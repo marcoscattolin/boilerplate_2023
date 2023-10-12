@@ -7,7 +7,6 @@ import pathlib
 import shutil
 
 import click
-import cowsay
 
 base_path = pathlib.Path(__file__).parent.parent.parent
 if ".venv" in base_path.parts:
@@ -39,7 +38,7 @@ def cli():
 @click.command(name="init")
 def init():
     output_path = initialize_local_default_config()
-    cowsay.cow(
+    print(
         "Initialized Config 🥳. You can find a template of the config file in "
         f"`{output_path}` in the project root dir."
     )
