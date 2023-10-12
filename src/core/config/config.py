@@ -107,7 +107,15 @@ def get_config(
         for f in files:
             with open(f, "r") as stream:
                 current_config = yaml.safe_load(stream)
+                # check for duplicate keys
+                if dup := set(current_config.keys()).intersection(
+                    set(extra_config.keys())
+                ):
+                    assert (
+                        len(dup) == 0
+                    ), f"Keys {dup} defined in {f} are also defined in other yaml files"
                 extra_config = {**extra_config, **current_config}
+
         if extra_config is None:
             extra_config = dict()
         # merge dicts, kwargs have priority
