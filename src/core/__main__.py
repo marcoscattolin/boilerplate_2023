@@ -20,12 +20,26 @@ def initialize_local_default_config() -> pathlib.Path:
 
     Returns: Copy destination
     """
-    src = pathlib.Path(__file__).parent / "config" / ".local.template.yaml"
-    dst = base_path / "local.yaml"
-    if os.path.isfile(dst):
-        raise FileExistsError(dst)
-    shutil.copy(src=src, dst=dst)
-    return dst
+
+    # gather template path and template filenames
+    src_path = pathlib.Path(__file__).parent / "config" / "templates"
+    src_files = [os.path.join(src_path, f) for f in os.listdir(src_path)]
+
+    # create destination path
+    dst_path = base_path / "configs"
+    os.makedirs(dst_path, exist_ok=True)
+
+    # create destination filenames
+    dst_files = [f.replace(".template.", "") for f in os.listdir(src_path)]
+    dst_files = [os.path.join(dst_path, f) for f in dst_files]
+
+    # copy
+    for src, dst in zip(src_files, dst_files):
+        if os.path.isfile(dst):
+            raise FileExistsError(dst)
+        shutil.copy(src=src, dst=dst)
+
+    return dst_path
 
 
 @click.group()

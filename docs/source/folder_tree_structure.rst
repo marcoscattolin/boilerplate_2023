@@ -15,7 +15,9 @@ The folder :code:`src` is meant to host all the code that has to developed. Sub-
 
 :code:`src/core/code_examples`: contains a few example of how to use spark and database support.
 
-:code:`src/core/config`: contains scripts used to load configuration parameters from yaml file.
+:code:`src/core/config`: contains scripts used to load configuration parameters from yaml files.
+
+:code:`src/core/config/templates`: contains template yaml files used to define configuration parameters.
 
 :code:`src/core/utils`: contains scripts used to instantiate logger and spark session.
 
@@ -26,6 +28,8 @@ The folder :code:`src` is meant to host all the code that has to developed. Sub-
 
 Other Folders
 -------------
+
+:code:`configs`: contains yaml files used to define configuration parameters. This folder is git-ignored and is meant to be created by the user.
 
 :code:`.venv`: virtual environment files, is created at environment setup time when a the local interpreter is created.
 
@@ -38,6 +42,7 @@ Other Folders
 :code:`logs`: logs are printed both to console and to log files saved here. File logging uses rotating logs to avoid log proliferation.
 
 :code:`test`: can be used for test scripts.
+
 
 
 Files in Content Root

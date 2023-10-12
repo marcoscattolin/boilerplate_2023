@@ -84,8 +84,8 @@ def get_config(
         This is mainly useful in interactive environments like notebooks
     :param local_yaml: Path to a yaml file that you can use to store sensible data.
         Three sources for this value - listed in the order of priority they take (least first):
-            - default: if the file 'local.yaml' if exists, is taken
             - os.environ['XCONFIG_LOCAL_YAML'] if exists, is taken
+            - default: if the file 'local.yaml' if exists, is taken
             - local_yaml function argument if provided, is taken
     :param env_prefix: Optional value to prefix environment variables.
         E.g. you can use 'DEV_' as the `env_prefix` and then all your config
@@ -95,16 +95,27 @@ def get_config(
     """
     if local_yaml is None:
         local_yaml = os.environ.get("XCONFIG_LOCAL_YAML", None)
-    if local_yaml is None and os.path.isfile(os.path.join(base_path, "local.yaml")):
-        local_yaml = os.path.join(base_path, "local.yaml")
-
+    if local_yaml is None and os.path.isdir(os.path.join(base_path, "configs")):
+        local_yaml = os.path.join(base_path, "configs")
     if local_yaml is None:
         return __provider.get_config(
             reload=reload, env_prefix=env_prefix, *args, **kwargs
         )
     else:
-        with open(local_yaml, "r") as stream:
-            extra_config = yaml.safe_load(stream)
+        extra_config = dict()
+        files = [os.path.join(local_yaml, f) for f in os.listdir(local_yaml)]
+        for f in files:
+            with open(f, "r") as stream:
+                current_config = yaml.safe_load(stream)
+                # check for duplicate keys
+                if dup := set(current_config.keys()).intersection(
+                    set(extra_config.keys())
+                ):
+                    assert (
+                        len(dup) == 0
+                    ), f"Keys {dup} defined in {f} are also defined in other yaml files"
+                extra_config = {**extra_config, **current_config}
+
         if extra_config is None:
             extra_config = dict()
         # merge dicts, kwargs have priority
