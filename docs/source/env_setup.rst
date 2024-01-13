@@ -91,7 +91,7 @@ To build the image go to path `./docker` and run
 
 .. code-block:: bash
 
-    docker-compose up venv
+    docker compose up venv
 
 Then in pycharm, add a new remote interpreter using the docker-compose service `venv` as remote interpreter. Here below the detailed steps:
 
