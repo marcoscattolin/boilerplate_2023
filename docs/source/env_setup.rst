@@ -70,7 +70,7 @@ to folder :code:`docker` and run
 
 .. code-block:: bash
 
-    docker compose up
+    docker compose up database
 
 Datbase credentials can be defined in :code:`local.yaml` and accessed by
 
@@ -81,29 +81,46 @@ Datbase credentials can be defined in :code:`local.yaml` and accessed by
     username = conf.sql_login.username
 
 
-Spark installation [Optional]
+
+Dockerized Development Environment
+----------------------------------
+
+This repository includes a dockerized virtual environment to simplify execution of spark jobs from local development machines.
+
+To build the image go to path `./docker` and run
+
+.. code-block:: bash
+
+    docker-compose up venv
+
+Then in pycharm, add a new remote interpreter using the docker-compose service `venv` as remote interpreter. Here below the detailed steps:
+
+    - In Pycharm, add new interpreter "On Docker Compose"
+    - Select file `docker-compose.yml` and then service `venv`
+    - Keep default python interpreter `/usr/bin/python3`
+
+Now you can run python scripts from pycharm using the dockerized interpreter.
+
+Jupyter Notebooks from docker
 -----------------------------
 
-Repository comes with spark support. Following instructions assume installation is done at path :code:`/opt`. Download spark release from
-`https://spark.apache.org/downloads.html <https://spark.apache.org/downloads.html>`_ and unpack. Set environment
-variable SPARK_HOME with:
+To run jupyter notebooks, you can use the dockerized environment. To do so launch the venv from Pycharm by:
 
-.. code-block:: bash
-
-    export SPARK_HOME=/opt/spark-3.4.1-bin-hadoop3
-
-Set variable SPARK_LOCAL_DIRS for path were temporary files (e.g. due to memory spill) are saved.
-If path does not exist, crate it.
-
-.. code-block:: bash
-
-    export SPARK_LOCAL_DIRS=/opt/spark_scratch
-
-Download :code:`postgresql-42.5.4.jar` file for postgres support in spark from
-`https://repo1.maven.org/maven2/org/postgresql/postgresql/42.5.4/postgresql-42.5.4.jar <https://repo1.maven.org/maven2/org/postgresql/postgresql/42.5.4/postgresql-42.5.4.jar>`_
-and save it into :code:`/opt/spark-3.4.1-bin-hadoop3/jars`
+    - opening the `docker-compose.yml` file
+    - click the green play arrow in the gutter of the `venv` service
+    - then access Services tab in the bottom of the IDE and click on the running `venv`
+    - click the Terminal tab and execute `jupyter notebook`
 
 
-If setting environment on a windows machine, download :code:`winutils.exe` for
-hadoop-3.3.5 from `https://github.com/huskyui/winutils/blob/master/hadoop-3.3.5/bin/winutils.exe <https://github.com/huskyui/winutils/blob/master/hadoop-3.3.5/bin/winutils.exe>`_
-and save it into :code:`C:\\spark\\hadoop-3.3.5\\bin`. Then set variable HADOOP_HOME to :code:`C:\\spark\\hadoop-3.3.5`
+Airflow DAGS Execution
+----------------------
+
+You can also run Airflow DAG's using the dockerized virtual environment. To do so launch the venv from Pycharm by:
+
+    - opening the `docker-compose.yml` file
+    - click the green play arrow in the gutter of the `venv` service
+    - then access Services tab in the bottom of the IDE and click on the running `venv`
+    - click the Terminal tab and execute `airflow scheduler`
+    - open one more Terminal tab and execute `airflow webserver`
+    - via browser, access the Airflow UI at `http://localhost:8080` (credentials are defined in `Dockerfile.venv`)
+    - you can now trigger DAGs in `src/core/airflow_dags` from the UI
